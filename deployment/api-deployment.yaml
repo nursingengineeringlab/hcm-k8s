@@ -16,7 +16,7 @@ spec:
         app: api
     spec:
       containers:
-        - image: nelab/neapi
+        - image: nelab/hcm-api:latest
           name: api
           ports:
             - containerPort: 8000
