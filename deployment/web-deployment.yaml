@@ -23,10 +23,3 @@ spec:
           name: web
           ports:
             - containerPort: 3000
-          resources:
-            requests:
-              memory: "800Mi"
-              cpu: "500m"
-            limits:
-              memory: "800Mi"
-              cpu: "500m"
