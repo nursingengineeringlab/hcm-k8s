@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: postgresql-db
+  namespace: ne
 spec:
   serviceName: postgresql-db-service
   selector:
