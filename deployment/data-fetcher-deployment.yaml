@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: datafetcher
+  namespace: ne
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: datafetcher
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+        - args:
+            - "--mqtt=emqx.redis.svc.cluster.local:6379"
+            - "--redis=emqx-nodeport.emqx.svc.cluster.local:1883"
+        - image: nelab/hcm-datafetcher:latest
+          name: datafetcher
+          ports:
+            - containerPort: 8888
