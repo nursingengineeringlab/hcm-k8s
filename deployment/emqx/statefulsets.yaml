@@ -25,7 +25,7 @@ spec:
       serviceAccountName: emqx
       containers:
       - name: emqx
-        image: emqx/emqx:v4.3.5
+        image: emqx/emqx
         ports:
         - name: mqtt
           containerPort: 1883
@@ -45,14 +45,14 @@ spec:
         volumeMounts:
         - name: emqx-data
           mountPath: "/opt/emqx/data/mnesia"
-  volumeClaimTemplates:
-  - metadata:
-      name: emqx-pvc
-      annotations:
-        volume.alpha.kubernetes.io/storage-class: microk8s-hostpath
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      resources:
-        requests:
-          storage: 1Gi
-      storageClassName: microk8s-hostpath
+  # volumeClaimTemplates:
+  # - metadata:
+  #     name: emqx-pvc
+  #     annotations:
+  #       volume.alpha.kubernetes.io/storage-class: microk8s-hostpath
+  #   spec:
+  #     accessModes: [ "ReadWriteOnce" ]
+  #     storageClassName: microk8s-hostpath
+  #     resources:
+  #       requests:
+  #         storage: 1Gi
