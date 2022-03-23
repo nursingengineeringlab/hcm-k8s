@@ -5,7 +5,7 @@ metadata:
   name: emqx
 ---
 kind: Role
-apiVersion: rbac.authorization.kubernetes.io/v1beta1
+apiVersion: rbac.authorization.kubernetes.io/v1
 metadata:
   namespace: default
   name: emqx
@@ -20,7 +20,7 @@ rules:
   - list
 ---
 kind: RoleBinding
-apiVersion: rbac.authorization.kubernetes.io/v1beta1
+apiVersion: rbac.authorization.kubernetes.io/v1
 metadata:
   namespace: default
   name: emqx
