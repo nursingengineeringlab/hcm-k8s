@@ -9,26 +9,26 @@ spec:
     app: emqx
   ports:
   - name: mqtt
-    port: 1883
+    port: 30482
     protocol: TCP
     targetPort: 1883
   - name: mqttssl
-    port: 8883
+    port: 32513
     protocol: TCP
     targetPort: 8883
   - name: mgmt
-    port: 8081
+    port: 31630
     protocol: TCP
     targetPort: 8081
   - name: websocket
-    port: 8083
+    port: 30848
     protocol: TCP
     targetPort: 8083
   - name: wss
-    port: 8084
+    port: 32729
     protocol: TCP
     targetPort: 8084
   - name: dashboard
-    port: 18083
+    port: 31513
     protocol: TCP
     targetPort: 18083

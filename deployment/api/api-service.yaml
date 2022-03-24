@@ -4,15 +4,12 @@ metadata:
   labels:
     app: api
   name: api
-  namespace: ne
+  namespace: api
 spec:
   ports:
-    - name: "8000"
+    - name: "http"
       port: 8000
       targetPort: 8000
-    - name: "5456"
-      port: 5456
-      targetPort: 5456
   selector:
     app: api
 status:

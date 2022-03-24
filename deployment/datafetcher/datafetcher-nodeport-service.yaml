@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: datafetcher
+  name: datafetcher-nodeport
+  namespace: datafetcher
+spec:
+  type: NodePort
+  ports:
+    - port: 8888
+      targetPort: 8888
+      nodePort: 30000
+  selector:
+    app: datafetcher

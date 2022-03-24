@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: datafetcher
-  namespace: ne
+  namespace: datafetcher
 spec:
   replicas: 1
   selector:
@@ -13,13 +13,13 @@ spec:
   template:
     metadata:
       labels:
-        app: api
+        app: datafetcher
     spec:
       containers:
         - args:
-            - "--mqtt=emqx.redis.svc.cluster.local:6379"
-            - "--redis=emqx-nodeport.emqx.svc.cluster.local:1883"
-        - image: nelab/hcm-datafetcher:latest
+            - "--redis=redis.redis.svc.cluster.local:6379"
+            - "--mqtt=emqx-headless.emqx.svc.cluster.local:1883"
+          image: nelab/hcm-datafetcher:latest
           name: datafetcher
           ports:
             - containerPort: 8888
