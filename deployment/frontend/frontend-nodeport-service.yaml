@@ -2,9 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: web
-  name: web-nodeport
-  namespace: ne
+    app: frontend
+  name: frontend-nodeport
+  namespace: frontend
 spec:
   type: NodePort
   ports:
@@ -12,4 +12,4 @@ spec:
       targetPort: 3000
       nodePort: 32000
   selector:
-    app: web
+    app: frontend

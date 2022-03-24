@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web
-  namespace: ne
+  name: frontend
+  namespace: frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: web
+      app: frontend
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: web
+        app: frontend
     spec:
       containers:
         - args:
             - npm
             - start
           image: nelab/hcm-frontend:latest
-          name: web
+          name: frontend
           ports:
             - containerPort: 3000
