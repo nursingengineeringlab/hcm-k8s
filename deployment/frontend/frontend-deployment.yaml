@@ -16,10 +16,7 @@ spec:
         app: frontend
     spec:
       containers:
-        - args:
-            - npm
-            - start
-          image: nelab/hcm-frontend:latest
+        - image: nelab/hcm-frontend:latest
           name: frontend
           ports:
-            - containerPort: 3000
+            - containerPort: 80
