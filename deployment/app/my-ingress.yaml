@@ -4,6 +4,10 @@ metadata:
   name: my-ingress
   namespace: app
 spec:
+  tls:
+    - hosts:
+      - nelab.ddns.umass.edu
+      secretName: api-secret
   rules:
   - host: nelab.ddns.umass.edu
     http:
