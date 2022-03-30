@@ -4,6 +4,10 @@ metadata:
   name: ingress-frontend
   namespace: frontend
 spec:
+  tls:
+    - hosts:
+      - nelab.ddns.umass.edu
+      secretName: frontend-secret
   rules:
   - host: nelab.ddns.umass.edu
     http:
