@@ -3,14 +3,13 @@ kind: Service
 metadata:
   labels:
     app: api
-  name: api
-  namespace: api
+  name: api-nodeport
+  namespace: app
 spec:
+  type: NodePort
   ports:
-    - name: "http"
-      port: 8000
+    - port: 8000
       targetPort: 8000
+      nodePort: 31000
   selector:
     app: api
-status:
-  loadBalancer: {}

@@ -4,7 +4,7 @@ metadata:
   labels:
     app: frontend
   name: frontend-nodeport
-  namespace: frontend
+  namespace: app
 spec:
   type: NodePort
   ports:

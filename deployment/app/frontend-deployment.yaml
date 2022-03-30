@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api
-  namespace: api
+  name: frontend
+  namespace: app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: api
+      app: frontend
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: api
+        app: frontend
     spec:
       containers:
-        - image: nelab/hcm-api:latest
-          name: api
+        - image: nelab/hcm-frontend:latest
+          name: frontend
           ports:
-            - containerPort: 8000
+            - containerPort: 80

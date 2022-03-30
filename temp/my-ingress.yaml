@@ -1,22 +1,28 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-frontend
-  namespace: frontend
+  name: my-ingress
 spec:
   tls:
     - hosts:
       - nelab.ddns.umass.edu
-      secretName: frontend-secret
+      secretName: api-secret
   rules:
   - host: nelab.ddns.umass.edu
     http:
       paths:
       - path: /
-        pathType: Prefix
+        pathType: Exact
         backend:
           service:
             name: frontend
             port:
               number: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: api
+            port:
+              number: 8000
   ingressClassName: nginx
