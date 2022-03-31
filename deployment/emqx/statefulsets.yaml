@@ -6,7 +6,7 @@ metadata:
   labels:
     app: emqx
 spec:
-  replicas: 3
+  replicas: 1
   serviceName: emqx-headless
   updateStrategy:
     type: RollingUpdate
@@ -25,7 +25,7 @@ spec:
       serviceAccountName: emqx
       containers:
       - name: emqx
-        image: emqx/emqx
+        image: nelab/emqx
         ports:
         - name: mqtt
           containerPort: 1883
