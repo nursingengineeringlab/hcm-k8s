@@ -17,7 +17,8 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -out api-tls.crt -keyout api
 
 kubectl create secret tls frontend-secret --key ./frontend-tls.key --cert frontend-tls.crt
 
-kubectl create secret tls api-secret --key ./api-tls.key --cert api-tls.crt
+kubectl create secret tls api-secret --key ./temp/api-tls.key --cert ./temp/api-tls.crt
+kubectl create secret tls api-secret --key ./temp/test.key --cert ./temp/test.crt
 
 
 
